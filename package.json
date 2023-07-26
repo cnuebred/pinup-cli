@@ -1,0 +1,35 @@
+{
+  "name": "@pinup/cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "pinup": "./dist/app.js"
+  },
+  "scripts": {
+    "build": "tsc && npm i -g .",
+    "start": "npx ts-node ./src/app.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/figlet": "^1.5.6",
+    "@types/inquirer": "^9.0.3",
+    "axios": "^1.4.0",
+    "commander": "^11.0.0",
+    "express": "^4.18.2",
+    "figlet": "^1.6.0",
+    "inquirer": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.3",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "eslint": "^8.45.0",
+    "eslint-config-standard-with-typescript": "^37.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^16.0.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "typescript": "^5.1.6"
+  }
+}

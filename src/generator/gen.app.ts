@@ -95,7 +95,6 @@ const set_structure = async(curr_dir: string, input: TemplateInputType) => {
 	}
 }
 
-
 const spinner = ( callback: (res, rej) => any, message = '') => {
 	const promise = new Promise((res, rej) => {
 		callback(res, rej)
@@ -130,10 +129,12 @@ export const app_gen = async (curr_dir: string, input: TemplateInputType) => {
 		})
 	}, ' Installing dependencies...')
 
-	if(input.git)
+	if(input.git){
+		writeFile(path.join(curr_dir, '.gitignore'), 'node_modules')
 		spinner((res) => {
 			exec(`cd ${curr_dir} && git init`, (error, stdout, stderr) => {
 				res(null)
 			})
 		}, ' Initializing git repository...')
+	}
 }
